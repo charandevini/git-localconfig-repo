@@ -1,6 +1,6 @@
 spring:
   config:
-    import: "configserver:http://localhost:8083"
+    import: configserver:http://localhost:8083
   application:
     name: course-engine-service
   datasource:
