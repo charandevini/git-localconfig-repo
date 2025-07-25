@@ -6,6 +6,8 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+  config:
+    import: configserver:http://config-server:8083
   jpa:
     properties:
       hibernate:
@@ -21,6 +23,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-      
+        
 server:
   port: 8000
