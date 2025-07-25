@@ -1,4 +1,6 @@
 spring:
+  config:
+    import: "configserver:http://localhost:8083"
   application:
     name: course-engine-service
   datasource:
@@ -6,8 +8,6 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
-  config:
-    import: configserver:http://config-server:8083
   jpa:
     properties:
       hibernate:
@@ -15,14 +15,3 @@ spring:
   web:
     resources:
       add-mappings: false
-      
-#Eureka Client Configuration
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-        
-server:
-  port: 8000
